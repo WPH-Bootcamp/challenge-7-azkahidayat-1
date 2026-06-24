@@ -27,7 +27,10 @@ const FaqSection = () => {
           <Accordion type='single' collapsible defaultValue='item-1'>
             {faq.map((item) => (
               <AccordionItem key={item.id} value={item.value}>
-                <AccordionTrigger className='font-bold text-lg lg:text-display-xs'>
+                <AccordionTrigger
+                  iconVariant='plus-minus'
+                  className='font-bold text-lg lg:text-display-xs'
+                >
                   {item.trigger}
                 </AccordionTrigger>
                 <AccordionContent className='font-medium text-neutral-500 text-sm lg:text-xl'>

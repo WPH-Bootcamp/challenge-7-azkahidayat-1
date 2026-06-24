@@ -8,7 +8,7 @@ interface DotIndicatorProps {
 
 const DotIndicator = ({ count, api, current }: DotIndicatorProps) => {
   return (
-    <div className='flex justify-center gap-2 mt-8 '>
+    <div className='flex justify-center gap-2'>
       {Array.from({ length: count }).map((_, index) => (
         <button
           key={index}

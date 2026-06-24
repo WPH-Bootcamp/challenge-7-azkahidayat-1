@@ -10,9 +10,9 @@ import {
 
 import SideFadeOverlay from '../ui/SideFadeOverlay';
 import { useDark } from '@/contexts/dark-mode/useDark';
-import TestimonialCards from '../ui/TestimonialCards';
 import { useEffect, useState } from 'react';
 import DotIndicator from '../ui/DotIndicator';
+import TestimonialCards from '../ui/TestimonialCards';
 
 const TestimonialsSection = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -56,7 +56,8 @@ const TestimonialsSection = () => {
         </CarouselContent>
       </Carousel>
       <DotIndicator count={count} api={api} current={current} />
-      <div className='hidden lg:block'>
+
+      <div className='hidden lg:contents'>
         <SideFadeOverlay variant={isDark ? 'dark' : 'light'} />
       </div>
     </section>

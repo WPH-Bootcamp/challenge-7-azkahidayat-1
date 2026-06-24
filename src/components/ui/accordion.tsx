@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Accordion as AccordionPrimitive } from 'radix-ui';
 
 import { cn } from '@/lib/utils';
-import { Minus, Plus } from 'lucide-react';
+import { ChevronDown, ChevronUp, Minus, Plus } from 'lucide-react';
 
 function Accordion({
   className,
@@ -33,30 +33,52 @@ function AccordionItem({
   );
 }
 
+interface AccordionTriggerProps extends React.ComponentProps<
+  typeof AccordionPrimitive.Trigger
+> {
+  iconVariant?: 'plus-minus' | 'chevron';
+}
+
 function AccordionTrigger({
   className,
   children,
+  iconVariant = 'chevron',
   ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
+}: AccordionTriggerProps) {
   return (
     <AccordionPrimitive.Header className='flex'>
       <AccordionPrimitive.Trigger
         data-slot='accordion-trigger'
         className={cn(
-          'group/accordion-trigger relative flex flex-1 items-start justify-between rounded-lg border border-transparent py-6 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:after:border-ring disabled:pointer-events-none disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4 **:data-[slot=accordion-trigger-icon]:text-muted-foreground',
+          'group/accordion-trigger relative flex flex-1 items-start justify-between rounded-lg border border-transparent py-2.5 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:after:border-ring disabled:pointer-events-none disabled:opacity-50 **:data-[slot=accordion-trigger-icon]:ml-auto **:data-[slot=accordion-trigger-icon]:size-4 **:data-[slot=accordion-trigger-icon]:text-muted-foreground',
           className
         )}
         {...props}
       >
         {children}
-        <Plus
-          data-slot='accordion-trigger-icon'
-          className='pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden'
-        />
-        <Minus
-          data-slot='accordion-trigger-icon'
-          className='pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline'
-        />
+        {iconVariant === 'chevron' ? (
+          <>
+            <ChevronDown
+              data-slot='accordion-trigger-icon'
+              className='pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden'
+            />
+            <ChevronUp
+              data-slot='accordion-trigger-icon'
+              className='pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline'
+            />
+          </>
+        ) : (
+          <>
+            <Plus
+              data-slot='accordion-trigger-icon'
+              className='pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden'
+            />
+            <Minus
+              data-slot='accordion-trigger-icon'
+              className='pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline'
+            />
+          </>
+        )}
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );
