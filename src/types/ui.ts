@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactNode } from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import type { EmblaCarouselType } from 'embla-carousel';
-import type { Testimony } from './data';
+import type { Testimony } from '@/types/data';
 
 export interface ButtonProps {
   children?: ReactNode;

@@ -1,13 +1,13 @@
-import HeroSection from './HeroSection';
-import ClientsSection from './ClientsSection';
-import StatsSection from './StatsSection';
-import OurProcessSection from './OurProcessSection';
-import ServicesSection from './ServicesSection';
-import IndustriesSection from './IndustriesSection';
-import ProjectsSection from './ProjectsSection';
-import TestimonialsSection from './TestimonialsSection';
-import FaqSection from './FaqSection';
-import ContactSection from './ContactSection';
+import HeroSection from '@/components/sections/HeroSection';
+import ClientsSection from '@/components/sections/ClientsSection';
+import StatsSection from '@/components/sections/StatsSection';
+import OurProcessSection from '@/components/sections/OurProcessSection';
+import ServicesSection from '@/components/sections/ServicesSection';
+import IndustriesSection from '@/components/sections/IndustriesSection';
+import ProjectsSection from '@/components/sections/ProjectsSection';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
+import FaqSection from '@/components/sections/FaqSection';
+import ContactSection from '@/components/sections/ContactSection';
 
 export {
   HeroSection,
