@@ -14,7 +14,7 @@ const StatsSection = () => {
           subtitle={headerText.subtitle}
         />
 
-        <div className='grid grid-cols-2 w-fit m-auto lg:grid-cols-4 gap-xl lg:gap-2xl'>
+        <div className='flex flex-wrap  justify-center gap-xl lg:gap-2xl w-full'>
           {stats.map((stat) => (
             <div
               key={stat.id}

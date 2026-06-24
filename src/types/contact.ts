@@ -1,4 +1,4 @@
-import type { contactFormSchema } from '@/schemas/ContactFormSchema';
+import type { contactFormSchema } from '@/schemas/contactFormSchema';
 import type { UseFormRegister } from 'react-hook-form';
 import type z from 'zod';
 
@@ -20,5 +20,11 @@ export interface TextAreaProps {
 export interface CheckboxForm {
   id: number;
   content: string;
+  errorMessage?: string;
+}
+
+export interface CheckboxProps {
+  items: CheckboxForm[];
+  register: UseFormRegister<ContactFormSchema>;
   errorMessage?: string;
 }

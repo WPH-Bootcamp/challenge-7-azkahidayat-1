@@ -1,30 +1,32 @@
-import { getSectionHeader } from '@/helpers/getSectionHeader';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import Container from '../ui/Container';
 import SectionHeader from '../ui/SectionHeader';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from './../../../node_modules/@hookform/resolvers/zod/src/zod';
-import type { ContactFormSchema } from '@/types/contact';
 import Input from '../ui/Input';
 import TextArea from '../ui/TextArea';
-import { checkbox } from '@/data/checkbox';
 import Checkbox from '../ui/Checkbox';
 import Button from '../ui/buttons/Button';
-import { contactFormSchema } from '@/schemas/ContactFormSchema';
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
+import Modal from '../ui/Modal';
+import { getSectionHeader } from '@/helpers/getSectionHeader';
+import { contactFormSchema } from '@/schemas/contactFormSchema';
+import { checkbox } from '@/data/checkbox';
+import { modal } from '@/data/modal';
+import { zodResolver } from '@hookform/resolvers/zod';
+import type { ContactFormSchema, ModalValue } from '@/types';
 
 const ContactSection = () => {
-  const headerText = getSectionHeader('contact');
+  const [isOpen, setIsOpen] = useState(false);
+  const [modalValue, setModalValue] = useState<ModalValue>({
+    title: '',
+    description: '',
+    buttonText: '',
+    image: '',
+  });
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
@@ -36,9 +38,30 @@ const ContactSection = () => {
     },
   });
 
+  const headerText = getSectionHeader('contact');
+
   const onSubmit = async (data: ContactFormSchema) => {
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(data);
+    const isSuccess = true;
+
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      if (!isSuccess) {
+        throw new Error('Error');
+      }
+      setModalValue(modal.success);
+      reset();
+      console.log('SUCCESS', data);
+    } catch (err) {
+      setModalValue(modal.fail);
+      if (err instanceof Error) {
+        console.log('ERROR', err.message);
+      } else {
+        console.log('Unknown Error');
+      }
+    } finally {
+      setIsOpen(true);
+    }
   };
 
   return (
@@ -82,24 +105,7 @@ const ContactSection = () => {
           </form>
         </Container>
       </section>
-      <Dialog open={true}>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
-            </DialogDescription>
-          </DialogHeader>
-
-          <DialogFooter>
-            <DialogClose asChild>
-              {/* <Button variant='outline'>Cancel</Button> */}
-            </DialogClose>
-            <Button type='submit'>Save changes</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>{' '}
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} modalValue={modalValue} />
     </>
   );
 };

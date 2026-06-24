@@ -1,4 +1,4 @@
-import type { TextAreaProps } from '@/types/contact';
+import type { TextAreaProps } from '@/types';
 
 const TextArea = ({ title, register, errorMessage }: TextAreaProps) => {
   const label =
@@ -10,7 +10,9 @@ const TextArea = ({ title, register, errorMessage }: TextAreaProps) => {
         <label htmlFor='message' className='font-bold text-sm'>
           {label}
         </label>
-        {errorMessage && <p className='text-red-500'>{errorMessage}</p>}
+        {errorMessage && (
+          <p className='text-red-500 text-right'>{errorMessage}</p>
+        )}
       </div>
       <textarea
         placeholder='Enter your message'
