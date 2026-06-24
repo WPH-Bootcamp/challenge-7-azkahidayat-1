@@ -16,16 +16,14 @@ const HomePage = () => {
     <>
       <HeroSection />
       <ClientsSection />
-      <div>
-        <StatsSection />
-        <OurProcessSection />
-        <ServicesSection />
-        <IndustriesSection />
-        <ProjectsSection />
-        <TestimonialsSection />
-        <FaqSection />
-        <ContactSection />
-      </div>
+      <StatsSection />
+      <OurProcessSection />
+      <ServicesSection />
+      <IndustriesSection />
+      <ProjectsSection />
+      <TestimonialsSection />
+      <FaqSection />
+      <ContactSection />
     </>
   );
 };

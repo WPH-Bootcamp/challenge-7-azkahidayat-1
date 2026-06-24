@@ -1,11 +1,34 @@
+import { useEffect, useState } from 'react';
 import type { LayoutProp } from '../../types';
 import Footer from './Footer';
 import Navbar from './Navbar';
+import OffcanvasMenu from './OffcanvasMenu';
+import { useMobileMenu } from '../../contexts/mobile-menu/useMobileMenu';
 
 const MainLayout = ({ children }: LayoutProp) => {
+  const [scrolled, setScrolled] = useState(false);
+  const { isOpen } = useMobileMenu();
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > 10);
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }, [isOpen]);
+
   return (
-    <div className='min-h-screen'>
-      <Navbar />
+    <div className={`min-h-screen dark:bg-black dark:text-white `}>
+      <Navbar scrolled={scrolled} />
+      <div>
+        <OffcanvasMenu />
+      </div>
       <main>
         <div className='wrapper'>{children}</div>
       </main>

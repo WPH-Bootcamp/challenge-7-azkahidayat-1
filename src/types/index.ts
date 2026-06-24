@@ -1,8 +1,4 @@
-// Type definition untuk button variants
-type ButtonVariant = 'primary' | 'secondary' | 'outline';
-type ButtonSize = 'sm' | 'md' | 'lg';
-
-// Props interface dengan TypeScript
+// Button Props
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
@@ -11,18 +7,23 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
 }
 
+// Layout
 interface LayoutProp {
   children: React.ReactNode;
   variant?: 'default' | 'header' | 'footer';
 }
 
 // Nav
+interface NavbarProp {
+  scrolled: boolean;
+}
+
 interface NavItem {
   title: string;
   href: string;
 }
 
-export type { ButtonVariant, ButtonSize, ButtonProps, LayoutProp, NavItem };
+export type { ButtonProps, LayoutProp, NavbarProp, NavItem };
 
 /**
  * Type Definitions

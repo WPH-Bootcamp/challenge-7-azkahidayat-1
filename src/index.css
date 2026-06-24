@@ -11,6 +11,8 @@
 @source "./**/*.{js,jsx,ts,tsx}";
 @source "../index.html";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @font-face {
   font-family: 'Quicksand';
   src: url('./assets/fonts/Quicksand-Light.woff2') format('woff2');
@@ -152,24 +154,24 @@
   --spacing-none: 0rem; /*   0px */
 
   --spacing-xxs: 0.125rem; /*   2px */
-  --spacing-xs: 0.25rem; /*   4px */
-  --spacing-sm: 0.375rem; /*   6px */
-  --spacing-md: 0.5rem; /*   8px */
-  --spacing-lg: 0.75rem; /*  12px */
+  --spacing-xs: 0.25rem; /*     4px */
+  --spacing-sm: 0.375rem; /*    6px */
+  --spacing-md: 0.5rem; /*      8px */
+  --spacing-lg: 0.75rem; /*    12px */
 
-  --spacing-xl: 1rem; /*  16px */
-  --spacing-2xl: 1.25rem; /*  20px */
-  --spacing-3xl: 1.5rem; /*  24px */
+  --spacing-xl: 1rem; /*       16px */
+  --spacing-2xl: 1.25rem; /*   20px */
+  --spacing-3xl: 1.5rem; /*    24px */
 
-  --spacing-4xl: 2rem; /*  32px */
-  --spacing-5xl: 2.5rem; /*  40px */
-  --spacing-6xl: 3rem; /*  48px */
+  --spacing-4xl: 2rem; /*      32px */
+  --spacing-5xl: 2.5rem; /*    40px */
+  --spacing-6xl: 3rem; /*      48px */
 
-  --spacing-7xl: 4rem; /*  64px */
-  --spacing-8xl: 5rem; /*  80px */
-  --spacing-9xl: 6rem; /*  96px */
+  --spacing-7xl: 4rem; /*      64px */
+  --spacing-8xl: 5rem; /*      80px */
+  --spacing-9xl: 6rem; /*      96px */
 
-  --spacing-10xl: 8rem; /* 128px */
+  --spacing-10xl: 8rem; /*    128px */
   --spacing-11xl: 8.75rem; /* 140px */
 }
 
@@ -183,6 +185,10 @@
 /* Smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-black dark:bg-black dark:text-white transition-colors duration-300;
 }
 
 /* Optional: Custom scrollbar styles */

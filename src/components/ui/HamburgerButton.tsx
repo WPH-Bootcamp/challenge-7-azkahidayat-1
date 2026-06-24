@@ -1,22 +1,19 @@
-import { useState } from 'react';
+import { useMobileMenu } from '../../contexts/mobile-menu/useMobileMenu';
 
 const HamburgerButton = () => {
-  const [active, setActive] = useState(false);
+  const { isOpen, toggleMenu } = useMobileMenu();
 
   const buttonClasses =
     'h-1 w-6 bg-neutral-950 rounded-full transition-all duration-200';
 
   return (
-    <button
-      className='lg:hidden flex flex-col gap-1'
-      onClick={() => setActive((prev) => !prev)}
-    >
+    <button className='flex flex-col gap-1 cursor-pointer' onClick={toggleMenu}>
       <span
-        className={`${buttonClasses} ${active && 'rotate-45 translate-y-2'}`}
+        className={`${buttonClasses} ${isOpen && 'rotate-45 translate-y-2'}`}
       ></span>
-      <span className={`${buttonClasses} ${active && 'opacity-0'}`}></span>
+      <span className={`${buttonClasses} ${isOpen && 'opacity-0'}`}></span>
       <span
-        className={`${buttonClasses} ${active && '-rotate-45 -translate-y-2'}`}
+        className={`${buttonClasses} ${isOpen && '-rotate-45 -translate-y-2'}`}
       ></span>
     </button>
   );

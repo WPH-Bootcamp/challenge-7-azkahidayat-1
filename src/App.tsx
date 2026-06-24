@@ -10,13 +10,16 @@
  */
 
 import MainLayout from './components/layout/MainLayout';
+import MobileMenuProvider from './contexts/mobile-menu/MobileMenuProvider';
 import HomePage from './pages/HomePage';
 
 function App() {
   return (
-    <MainLayout>
-      <HomePage />
-    </MainLayout>
+    <MobileMenuProvider>
+      <MainLayout>
+        <HomePage />
+      </MainLayout>
+    </MobileMenuProvider>
   );
 }
 
