@@ -1,9 +1,19 @@
+import { getSectionHeader } from '@/helpers/getSectionHeader';
 import Container from '../ui/Container';
+import SectionHeader from '../ui/SectionHeader';
 
 const IndustriesSection = () => {
+  const headerText = getSectionHeader('industry');
+
   return (
     <section>
-      <Container>IndustriesSection</Container>
+      <Container>
+        <SectionHeader
+          title={headerText.title}
+          subtitle={headerText.subtitle}
+          align='left'
+        />
+      </Container>
     </section>
   );
 };

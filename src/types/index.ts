@@ -91,8 +91,8 @@ interface SectionHeader {
 // Section Header Props
 interface SectionHeaderProps {
   title: string;
-  subtitle: string;
-  align: 'center' | 'left';
+  subtitle?: string;
+  align?: 'center' | 'left';
 }
 
 export type {
