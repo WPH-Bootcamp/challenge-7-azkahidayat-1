@@ -95,6 +95,13 @@ interface SectionHeaderProps {
   align?: 'center' | 'left';
 }
 
+// Stats
+interface Stats {
+  id: number;
+  value: string;
+  label: string;
+}
+
 export type {
   ButtonProps,
   LayoutProp,
@@ -111,6 +118,7 @@ export type {
   OverlayProps,
   SectionHeader,
   SectionHeaderProps,
+  Stats,
 };
 
 /**

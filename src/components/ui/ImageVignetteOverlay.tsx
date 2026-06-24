@@ -14,6 +14,9 @@ const ImageVignetteOverlay = ({ variant }: OverlayProps) => {
       <div
         className={`absolute left-0 inset-y-0 w-25 bg-linear-to-r ${colorClass} to-transparent`}
       ></div>
+      <div
+        className={`absolute right-0 inset-y-0 w-25 bg-linear-to-l ${colorClass} to-transparent`}
+      ></div>
     </>
   );
 };

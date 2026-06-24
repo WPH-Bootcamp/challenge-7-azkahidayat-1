@@ -12,7 +12,7 @@ const HeroSection = () => {
   const taglineSecondPart = companyInfo.tagline.split(' ').slice(4).join(' ');
 
   return (
-    <section className='container m-auto relative lg:flex lg:justify-end'>
+    <section className='max-w-360 m-auto relative lg:flex lg:justify-end'>
       <div className='flex flex-col px-xl gap-5xl pt-15.25 pb-10.75 lg:absolute lg:z-10 lg:left-11xl lg:top-15 xl:top-36.5 lg:max-w-120 xl:max-w-163.25 lg:p-0'>
         <div>
           <p className='font-bold text-display-lg lg:text-display-xl xl:text-display-3xl'>
