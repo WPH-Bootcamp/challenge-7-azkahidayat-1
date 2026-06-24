@@ -1,4 +1,4 @@
-// Button Props
+// Button
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
@@ -13,7 +13,7 @@ interface LayoutProp {
   variant?: 'default' | 'header' | 'footer';
 }
 
-// Nav
+// Navbar
 interface NavbarProp {
   scrolled: boolean;
 }
@@ -23,7 +23,72 @@ interface NavItem {
   href: string;
 }
 
-export type { ButtonProps, LayoutProp, NavbarProp, NavItem };
+// NavLinks
+interface NavLinksProps {
+  variant?: 'mobile' | 'desktop';
+  className?: string;
+}
+
+// Data: CompanyInfo
+interface Social {
+  name: string;
+  url: string;
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+}
+
+interface CompanyInfo {
+  name: string;
+  tagline: string;
+  description: string;
+  cta: string;
+  socials: Social[];
+}
+
+// Logo
+interface LogoProps {
+  className?: string;
+}
+
+// Social Media
+interface SocialMediaProp {
+  className?: string;
+}
+
+// Dark Context
+interface DarkContextType {
+  isDark: boolean;
+  toggleDark: () => void;
+}
+
+interface DarkProviderProp {
+  children: React.ReactNode;
+}
+
+// Mobile Menu
+interface MobileMenuContextType {
+  isOpen: boolean;
+  closeMenu: () => void;
+  toggleMenu: () => void;
+}
+
+interface MobileMenuProviderProps {
+  children: React.ReactNode;
+}
+
+export type {
+  ButtonProps,
+  LayoutProp,
+  NavbarProp,
+  NavItem,
+  NavLinksProps,
+  CompanyInfo,
+  LogoProps,
+  SocialMediaProp,
+  DarkContextType,
+  DarkProviderProp,
+  MobileMenuContextType,
+  MobileMenuProviderProps,
+};
 
 /**
  * Type Definitions

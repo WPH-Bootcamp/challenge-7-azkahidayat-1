@@ -1,8 +1,4 @@
 import { createContext } from 'react';
+import type { DarkContextType } from '../../types';
 
-interface DartContextType {
-  isDark: boolean;
-  toggleDark: () => void;
-}
-
-export const DarkContext = createContext<DartContextType | null>(null);
+export const DarkContext = createContext<DarkContextType | null>(null);

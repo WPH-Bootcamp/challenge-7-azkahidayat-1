@@ -24,7 +24,7 @@ const MainLayout = ({ children }: LayoutProp) => {
   }, [isOpen]);
 
   return (
-    <div className={`min-h-screen dark:bg-black dark:text-white `}>
+    <div className={`min-h-screen dark:bg-black `}>
       <Navbar scrolled={scrolled} />
       <div>
         <OffcanvasMenu />

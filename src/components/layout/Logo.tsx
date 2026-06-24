@@ -1,15 +1,18 @@
 import CompanyLogo from '../../assets/images/logo-symbol.svg';
 import { useMobileMenu } from '../../contexts/mobile-menu/useMobileMenu';
+import type { LogoProps } from '../../types';
 
-const Logo = () => {
+const Logo = ({ className = '' }: LogoProps) => {
   const { closeMenu } = useMobileMenu();
   return (
-    <div onClick={closeMenu}>
+    <div onClick={closeMenu} className={className}>
       <a href='#' className='flex gap-md items-center cursor-pointer'>
-        <div>
+        <div className='w-[26.13px] h-[28.66px] lg:w-[29.59px] lg:h-[32.46px]'>
           <img src={CompanyLogo} alt='Company Logo' loading='lazy' />
         </div>
-        <span className='font-semibold text-2xl lg:text-3xl'>Your Logo</span>
+        <span className='font-semibold text-[21.19px] lg:text-2xl'>
+          Your Logo
+        </span>
       </a>
     </div>
   );

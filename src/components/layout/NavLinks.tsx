@@ -1,22 +1,11 @@
 import { useMobileMenu } from '../../contexts/mobile-menu/useMobileMenu';
-import type { NavItem } from '../../types';
-
-interface NavLinksProps {
-  variant?: 'mobile' | 'desktop';
-  className?: string;
-}
+import { navItems } from '../../data/navigation';
+import type { NavLinksProps } from '../../types';
 
 const NavLinks = ({ variant = 'mobile', className = '' }: NavLinksProps) => {
   const { closeMenu } = useMobileMenu();
 
-  const navItems: NavItem[] = [
-    { title: 'About', href: '#about' },
-    { title: 'Service', href: '#service' },
-    { title: 'Projects', href: '#projects' },
-    { title: 'Testimonials', href: '#testimonials' },
-    { title: 'FAQ', href: '#faq' },
-  ];
-  const baseStyles = `flex gap-lg`;
+  const baseStyles = `flex gap-lg lg:gap-11 text-sm lg:text-md font-medium`;
 
   const variantStyles = {
     mobile: 'flex-col',

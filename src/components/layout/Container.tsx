@@ -5,8 +5,8 @@ const Container = ({ children, variant = 'default' }: LayoutProp) => {
 
   const variantStyles = {
     default: 'py-8xl flex-col gap-3xl lg:gap-7xl',
-    header: 'justify-between items-center py-3xl lg:py-0 lg:h-21',
-    footer: '',
+    header: 'py-3xl justify-between items-center lg:py-0 lg:h-21',
+    footer: 'py-3xl lg:py-5xl',
   };
 
   const containerClasses = `

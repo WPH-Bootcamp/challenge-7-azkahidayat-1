@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { DarkContext } from './DarkContext';
-
-interface DarkProviderProp {
-  children: React.ReactNode;
-}
+import type { DarkProviderProp } from '../../types';
 
 const DarkProvider = ({ children }: DarkProviderProp) => {
   const [isDark, setIsDark] = useState(false);
