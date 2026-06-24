@@ -1,7 +1,9 @@
+import type { FunctionComponent } from 'react';
+
 export interface ClientsLogo {
   id: number;
   name: string;
-  logo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  logo: FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }
 
 export interface Stats {
@@ -14,4 +16,23 @@ export interface OurProcess {
   id: number;
   title: string;
   content: string;
+}
+
+export interface Service {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface Industry {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
+export interface Project {
+  id: number;
+  title: string;
+  image: string;
 }
