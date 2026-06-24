@@ -24,7 +24,7 @@ const OurProcessSection = () => {
           defaultValue={['notifications']}
           className='relative flex flex-col gap-xl'
         >
-          <div className='absolute -z-10 left-5 lg:left-1/2 -translate-x-1/2 h-full w-px bg-[#DFDFDF] dark:bg-neutral-800' />
+          <div className='absolute z-1 left-5 lg:left-1/2 -translate-x-1/2 h-full w-px bg-[#DFDFDF] dark:bg-neutral-800' />
           {ourProcess.map((item, index) => {
             const isEven = index % 2 === 0;
             const isFirst = index === 0;
@@ -34,7 +34,7 @@ const OurProcessSection = () => {
                 key={item.id}
                 className='relative flex lg:grid lg:grid-cols-2 gap-lg lg:gap-9xl'
               >
-                <div className='relative self-stretch flex items-center lg:absolute lg:inset-y-0 lg:left-1/2 lg:-translate-x-1/2'>
+                <div className='relative z-5 self-stretch flex items-center lg:absolute lg:inset-y-0 lg:left-1/2 lg:-translate-x-1/2'>
                   <p className='font-bold flex justify-center items-center text-white text-sm lg:text-md size-5xl aspect-square lg:size-6xl rounded-full bg-primary-200'>
                     {index + 1}
                   </p>
@@ -46,11 +46,11 @@ const OurProcessSection = () => {
                 </div>
 
                 <AccordionItem
-                  value={item.title}
+                  value={item.trigger}
                   className={`w-full border p-xl rounded-2xl bg-neutral-50 border-[#DEDCDC] dark:bg-neutral-950 dark:border-neutral-900 transition-transform duration-300 hover:scale-102 cursor-pointer ${isEven ? 'lg:col-start-1 lg:mr-auto' : 'lg:col-start-2 lg:ml-auto'}`}
                 >
                   <AccordionTrigger className='font-bold text-md lg:text-xl cursor-pointer'>
-                    {item.title}
+                    {item.trigger}
                   </AccordionTrigger>
                   <AccordionContent className='font-medium text-sm text-neutral-500 lg:text-md'>
                     {item.content}

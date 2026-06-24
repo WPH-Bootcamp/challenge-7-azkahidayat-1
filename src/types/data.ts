@@ -14,7 +14,8 @@ export interface Stats {
 
 export interface OurProcess {
   id: number;
-  title: string;
+  value: string;
+  trigger: string;
   content: string;
 }
 
@@ -31,8 +32,27 @@ export interface Industry {
   description: string;
   image: string;
 }
+
 export interface Project {
   id: number;
   title: string;
   image: string;
+}
+
+export interface Testimony {
+  id: number;
+  rating: number;
+  quote: string;
+  author: {
+    name: string;
+    role: string;
+    avatar: string;
+  };
+}
+
+export interface Faq {
+  id: number;
+  value: string;
+  trigger: string;
+  content: string;
 }
