@@ -20,7 +20,11 @@ const ProjectsSection = () => {
               className='flex flex-col gap-md lg:gap-lg max-w-93.25 hover:scale-102 transition-transform'
             >
               <div className='rounded-xl overflow-hidden'>
-                <img src={item.image} alt={`${item.title} image`} />
+                <img
+                  src={item.image}
+                  alt={`${item.title} image`}
+                  loading='lazy'
+                />
               </div>
               <p className='font-medium text-sm text-primary-200 lg:text-md'>
                 Landing Page

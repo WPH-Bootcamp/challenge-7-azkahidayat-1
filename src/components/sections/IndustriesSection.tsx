@@ -45,6 +45,7 @@ const IndustriesSection = () => {
                   src={item.image}
                   alt={`${item.title} image`}
                   className='w-full h-full object-center object-cover'
+                  loading='lazy'
                 />
               </div>
             </TabsContent>

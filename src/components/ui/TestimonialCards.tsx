@@ -9,7 +9,7 @@ const TestimonialCards = ({ item }: TestimonialsCardProps) => {
       <div className='relative flex flex-col justify-center items-center pt-xl px-xl pb-6xl bg-neutral-50 dark:bg-neutral-950 rounded-2xl lg:pt-3xl lg:px-3xl '>
         <div className='flex gap-xs mb-lg'>
           {Array.from({ length: rating }).map((_, index) => (
-            <img key={index} src={star}></img>
+            <img key={index} src={star} loading='lazy'></img>
           ))}
         </div>
         <p className='text-center mb-3xl font-semibold text-sm lg:text-lg'>
@@ -20,10 +20,14 @@ const TestimonialCards = ({ item }: TestimonialsCardProps) => {
           {item.author.role}
         </p>
         <div className='absolute bottom-0 translate-y-1/2'>
-          <img src={item.author.avatar} alt={`${item.author.name} avatar`} />
+          <img
+            src={item.author.avatar}
+            alt={`${item.author.name} avatar`}
+            loading='lazy'
+          />
         </div>
         <div className='absolute top-0 -translate-y-1/2 left-[25.67px]'>
-          <img src={quoteMark} alt='quote mark' />
+          <img src={quoteMark} alt='quote mark' loading='lazy' />
         </div>
       </div>
     </div>

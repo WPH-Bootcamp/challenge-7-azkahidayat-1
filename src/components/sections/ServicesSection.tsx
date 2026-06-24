@@ -24,7 +24,11 @@ const ServicesSection = () => {
                   {item.description}
                 </p>
                 <div className='absolute size-7xl lg:size-8xl left-2xl -top-2xl'>
-                  <img src={item.icon} alt={`${item.title} icon`} />
+                  <img
+                    src={item.icon}
+                    alt={`${item.title} icon`}
+                    loading='lazy'
+                  />
                 </div>
               </div>
             );

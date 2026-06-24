@@ -26,6 +26,7 @@ const Modal = ({ isOpen, setIsOpen, modalValue }: ModalProps) => {
             <img
               src={modalValue?.image}
               alt={`${modalValue?.title} image`}
+              loading='lazy'
               className='w-11xl'
             />
           </div>

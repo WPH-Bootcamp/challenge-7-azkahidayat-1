@@ -47,7 +47,7 @@ const FaqSection = () => {
               book a free consultation with our team.
             </p>
             <div className='rounded-2xl'>
-              <img src={meeting} alt='people having a meeting' />
+              <img src={meeting} alt='people having a meeting' loading='lazy' />
             </div>
             <a href='#contact' className='mt-auto'>
               <Button variant='black'>Free Consultation</Button>
