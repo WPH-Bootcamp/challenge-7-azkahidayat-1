@@ -81,6 +81,20 @@ interface ImageVignetteOverlayProps {
   variant: 'dark' | 'light';
 }
 
+// Header Section
+interface SectionHeader {
+  section: string;
+  title: string;
+  subtitle: string;
+}
+
+// Section Header Props
+interface SectionHeaderProps {
+  title: string;
+  subtitle: string;
+  align: 'center' | 'left';
+}
+
 export type {
   ButtonProps,
   LayoutProp,
@@ -95,6 +109,8 @@ export type {
   MobileMenuContextType,
   MobileMenuProviderProps,
   ImageVignetteOverlayProps,
+  SectionHeader,
+  SectionHeaderProps,
 };
 
 /**

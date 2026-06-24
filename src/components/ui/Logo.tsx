@@ -1,3 +1,4 @@
+import { companyInfo } from '@/data/company';
 import CompanyLogo from '../../assets/images/logo-symbol.svg';
 import { useMobileMenu } from '../../contexts/mobile-menu/useMobileMenu';
 import type { LogoProps } from '../../types';
@@ -11,7 +12,7 @@ const Logo = ({ className = '' }: LogoProps) => {
           <img src={CompanyLogo} alt='Company Logo' loading='lazy' />
         </div>
         <span className='font-semibold text-[21.19px] lg:text-2xl'>
-          Your Logo
+          {companyInfo.name}
         </span>
       </a>
     </div>

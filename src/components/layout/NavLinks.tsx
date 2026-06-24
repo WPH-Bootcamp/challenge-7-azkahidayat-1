@@ -5,7 +5,7 @@ import type { NavLinksProps } from '../../types';
 const NavLinks = ({ variant = 'mobile', className = '' }: NavLinksProps) => {
   const { closeMenu } = useMobileMenu();
 
-  const baseStyles = `flex gap-lg lg:gap-11 text-sm lg:text-md font-medium`;
+  const baseStyles = `flex gap-lg lg:gap-xxl xl:gap-11 text-sm lg:text-md font-medium`;
 
   const variantStyles = {
     mobile: 'flex-col',
