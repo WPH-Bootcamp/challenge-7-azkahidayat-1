@@ -1,6 +1,6 @@
-import { useMobileMenu } from '../../contexts/mobile-menu/useMobileMenu';
-import Button from '../ui/buttons/Button';
-import NavLinks from './NavLinks';
+import { useMobileMenu } from '@/contexts/mobile-menu/useMobileMenu';
+import Button from '@/components/ui/buttons/Button';
+import NavLinks from '@/components/layout/NavLinks';
 
 const OffcanvasMenu = () => {
   const { isOpen, closeMenu } = useMobileMenu();

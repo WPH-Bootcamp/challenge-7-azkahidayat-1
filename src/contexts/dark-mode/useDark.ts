@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { DarkContext } from './DarkContext';
+import { DarkContext } from '@/contexts/dark-mode/DarkContext';
 
 export const useDark = () => {
   const context = useContext(DarkContext);

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MobileMenuContext } from './MobileMenuContext';
+import { MobileMenuContext } from '@/contexts/mobile-menu/MobileMenuContext';
 import type { MobileMenuProviderProps } from '@/types';
 
 const MobileMenuProvider = ({ children }: MobileMenuProviderProps) => {

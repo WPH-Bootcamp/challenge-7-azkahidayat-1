@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import type { ModalValue } from '@/types';
 import type { Dispatch, SetStateAction } from 'react';
-import Button from './buttons/Button';
+import Button from '@/components/ui/buttons/Button';
 
 interface ModalProps {
   isOpen: boolean;
