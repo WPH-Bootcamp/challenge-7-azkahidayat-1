@@ -13,9 +13,16 @@ interface ButtonProps {
 
 interface LayoutProp {
   children: React.ReactNode;
+  variant?: 'default' | 'header' | 'footer';
 }
 
-export type { ButtonVariant, ButtonSize, ButtonProps, LayoutProp };
+// Nav
+interface NavItem {
+  title: string;
+  href: string;
+}
+
+export type { ButtonVariant, ButtonSize, ButtonProps, LayoutProp, NavItem };
 
 /**
  * Type Definitions
